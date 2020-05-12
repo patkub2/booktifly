@@ -3,12 +3,14 @@ import "../App.css";
 import Header from "./Header";
 import Container from "./Container";
 import Layout from "./Layout";
+import Body from "./Body";
 
 function App() {
   return (
     <Layout>
       <Container>
-        <Header></Header>
+        <Header />
+        <Body />
       </Container>
     </Layout>
   );

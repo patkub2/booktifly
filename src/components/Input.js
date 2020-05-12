@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import zoom from "../img/zoom.svg";
+import useSearch from "./useSearch";
+
 const InputWraper = styled.nav`
   display: flex;
   outline: none;
@@ -38,24 +40,27 @@ const InputWraper = styled.nav`
       outline: none;
     }
   }
-  input:focus,
+  option:hover,
   select:focus {
     outline: none;
   }
 `;
 
 const Input = () => {
+  const { handleSearch, search } = useSearch();
   return (
-    <InputWraper>
-      <select>
-        <option value="" disabled selected>
-          Sort
-        </option>
-        <option value="Newest">Newest</option>
-        <option value="Oldest">Oldest</option>
-      </select>
-      <input type="text" placeholder="Search.." />
-    </InputWraper>
+    <>
+      <InputWraper>
+        <form>
+          <select>
+            <option value="Newest">Newest</option>
+            <option value="Oldest">Oldest</option>
+          </select>
+          <input onChange={handleSearch} type="text" placeholder="Search.." />
+          {search}
+        </form>
+      </InputWraper>
+    </>
   );
 };
 

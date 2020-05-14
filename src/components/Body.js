@@ -14,8 +14,18 @@ const BodyWrapper = styled.nav`
 `;
 
 const Header = () => {
-  const { search } = useSearch();
-  return <BodyWrapper>{search}</BodyWrapper>;
+  const { handleSearch, search } = useSearch();
+  return (
+    <BodyWrapper>
+      <button
+        onClick={() => {
+          console.log({ search });
+        }}
+      >
+        sdad
+      </button>
+    </BodyWrapper>
+  );
 };
 
 export default Header;

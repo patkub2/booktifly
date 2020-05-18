@@ -27,7 +27,7 @@ function SearchContextProvider(props) {
           search +
           "&key=" +
           apiKey +
-          "&maxResults=8"
+          "&maxResults=10"
       )
       .then((data) => {
         console.log(data.data.items);

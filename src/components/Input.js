@@ -47,16 +47,16 @@ const InputWraper = styled.nav`
 `;
 
 const Input = () => {
-  const { search, handleSearch } = useContext(SearchContext);
+  const { search, handleSearch, handleSubmit } = useContext(SearchContext);
   return (
     <InputWraper>
-      <form>
+      <form onSubmit={handleSubmit}>
         <select>
           <option value="Newest">Newest</option>
           <option value="Oldest">Oldest</option>
         </select>
         <input onChange={handleSearch} type="text" placeholder="Search.." />
-        {search}
+        <button type="submit">Search</button>
       </form>
     </InputWraper>
   );

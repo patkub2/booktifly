@@ -4,14 +4,17 @@ import Header from "./Header";
 import Container from "./Container";
 import Layout from "./Layout";
 import Body from "./Body";
+import { SearchContextProvider } from "./searchContext";
 
 function App() {
   return (
     <Layout>
-      <Container>
-        <Header />
-        <Body />
-      </Container>
+      <SearchContextProvider>
+        <Container>
+          <Header />
+          <Body />
+        </Container>
+      </SearchContextProvider>
     </Layout>
   );
 }

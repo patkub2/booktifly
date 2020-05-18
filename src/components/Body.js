@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
-
-import useSearch from "./useSearch";
+import { SearchContext } from "./searchContext";
 
 const BodyWrapper = styled.nav`
   border: 1px solid red; /* RED*/
@@ -14,7 +13,8 @@ const BodyWrapper = styled.nav`
 `;
 
 const Header = () => {
-  const { handleSearch, search } = useSearch();
+  const { search } = useContext(SearchContext);
+  // const { handleSearch, search } = useSearch();
   return (
     <BodyWrapper>
       <button

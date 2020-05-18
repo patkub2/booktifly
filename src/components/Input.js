@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import zoom from "../img/zoom.svg";
-import useSearch from "./useSearch";
+import { SearchContext } from "./searchContext";
 
 const InputWraper = styled.nav`
   display: flex;
@@ -47,20 +47,18 @@ const InputWraper = styled.nav`
 `;
 
 const Input = () => {
-  const { handleSearch, search } = useSearch();
+  const { search, handleSearch } = useContext(SearchContext);
   return (
-    <>
-      <InputWraper>
-        <form>
-          <select>
-            <option value="Newest">Newest</option>
-            <option value="Oldest">Oldest</option>
-          </select>
-          <input onChange={handleSearch} type="text" placeholder="Search.." />
-          {search}
-        </form>
-      </InputWraper>
-    </>
+    <InputWraper>
+      <form>
+        <select>
+          <option value="Newest">Newest</option>
+          <option value="Oldest">Oldest</option>
+        </select>
+        <input onChange={handleSearch} type="text" placeholder="Search.." />
+        {search}
+      </form>
+    </InputWraper>
   );
 };
 

@@ -4,18 +4,21 @@ import zoom from "../img/zoom.svg";
 import { SearchContext } from "./searchContext";
 
 const InputWraper = styled.nav`
+  border: 1px solid red; /* RED*/
   display: flex;
   outline: none;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  min-width: 400px;
   width: 60vh;
+  flex-wrap: wrap;
   select:focus,
   textarea:focus,
   input:focus {
     outline: none;
   }
   input {
-    width: 40vh;
+    width: 65%;
     box-sizing: border-box;
     border: 2px solid ${({ theme }) => theme.colors.dark};
     border-radius: 20px;
@@ -27,8 +30,9 @@ const InputWraper = styled.nav`
     background-repeat: no-repeat;
     padding: 13px 0px 12px 40px;
   }
-  select {
-    width: 15vh;
+
+  button {
+    min-width: 30%;
     box-sizing: border-box;
     border: 2px solid ${({ theme }) => theme.colors.dark};
     border-radius: 20px;
@@ -40,25 +44,17 @@ const InputWraper = styled.nav`
       outline: none;
     }
   }
-  option:hover,
-  select:focus {
-    outline: none;
-  }
 `;
 
 const Input = () => {
   const { search, handleSearch, handleSubmit } = useContext(SearchContext);
   return (
-    <InputWraper>
-      <form onSubmit={handleSubmit}>
-        <select>
-          <option value="Newest">Newest</option>
-          <option value="Oldest">Oldest</option>
-        </select>
+    <form onSubmit={handleSubmit}>
+      <InputWraper>
         <input onChange={handleSearch} type="text" placeholder="Search.." />
         <button type="submit">Search</button>
-      </form>
-    </InputWraper>
+      </InputWraper>
+    </form>
   );
 };
 

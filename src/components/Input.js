@@ -9,8 +9,10 @@ const InputWraper = styled.nav`
   outline: none;
   justify-content: space-between;
   align-items: center;
-  min-width: 400px;
   flex-wrap: wrap;
+  @media (max-width: 665px) {
+    justify-content: center;
+  }
 `;
 
 const InputArea = styled.input`
@@ -28,6 +30,9 @@ const InputArea = styled.input`
   :focus {
     outline: none;
   }
+  @media (max-width: 665px) {
+    width: 100%;
+  }
 `;
 
 const Button = styled.button`
@@ -41,6 +46,9 @@ const Button = styled.button`
   outline: none;
   :hover {
     outline: none;
+  }
+  @media (max-width: 665px) {
+    width: 50%;
   }
 `;
 

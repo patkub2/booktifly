@@ -7,6 +7,9 @@ const Containerr = styled.nav`
   border: 1px solid yellow; /* RED*/
   background: rgba(234, 226, 183, 0.7);
   border-radius: 40px;
+  @media (max-width: 900px) {
+    margin: 0;
+  }
 `;
 
 const Container = ({ children }) => {

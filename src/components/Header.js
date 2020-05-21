@@ -17,6 +17,10 @@ const NavBar = styled.nav`
   img {
     width: 50px;
   }
+  @media (max-width: 665px) {
+    justify-content: center;
+    height: 180px;
+  }
 `;
 
 const Header = () => {

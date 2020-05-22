@@ -32,15 +32,6 @@ const Book = styled.div`
     border-radius: 20px;
   }
 
-  .image {
-    display: block;
-    width: 100%;
-    max-height: 100%;
-    height: 100%;
-
-    border-radius: 20px;
-  }
-
   .overlay {
     position: absolute;
     top: 0;
@@ -72,6 +63,53 @@ const Book = styled.div`
     text-align: center;
   }
 `;
+
+const Img = styled.img`
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  height: 100%;
+
+  border-radius: 20px;
+`;
+
+const Overlay = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #008cba;
+
+  border-radius: 20px;
+`;
+
+const Cont = styled.div`
+  position: relative;
+  height: 36vh;
+  width: 26vh;
+  border-radius: 20px;
+  :hover ${Overlay} {
+    opacity: 1;
+  }
+`;
+
+const Text = styled.div`
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+`;
+
 const Header = () => {
   const { result } = useContext(SearchContext);
   console.log(result.volumeInfo);
@@ -80,20 +118,24 @@ const Header = () => {
     <BodyWrapper>
       {result.map((book) => (
         <Book>
-          <div class="container">
-            <img
+          <Cont>
+            <Img
               src={
-                book.volumeInfo.imageLinks.thumbnail
+                book.volumeInfo.imageLinks
                   ? book.volumeInfo.imageLinks.thumbnail
                   : nobook
               }
               alt="Avatar"
               class="image"
             />
-            <div class="overlay">
-              <div class="text">{book.volumeInfo.title}</div>
-            </div>
-          </div>
+            <Overlay>
+              <Text>
+                {book.volumeInfo.title.length > 50
+                  ? book.volumeInfo.title.replace(/ .*/, "")
+                  : book.volumeInfo.title}
+              </Text>
+            </Overlay>
+          </Cont>
         </Book>
       ))}
     </BodyWrapper>

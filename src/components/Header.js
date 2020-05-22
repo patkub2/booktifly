@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import Input from "./Input";
 
 const NavBar = styled.nav`
-  border: 1px solid white; /* RED*/
+  /*border: 1px solid white; /* RED*/
   width: 100%;
   height: 80px;
   display: flex;
@@ -17,9 +17,14 @@ const NavBar = styled.nav`
   img {
     width: 50px;
   }
+  @media (max-width: 900px) {
+    border-radius: 0px;
+  }
+
   @media (max-width: 665px) {
     justify-content: center;
     height: 180px;
+    border-radius: 0px;
   }
 `;
 

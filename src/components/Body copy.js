@@ -4,7 +4,7 @@ import { SearchContext } from "./searchContext";
 import nobook from "../img/nobook.png";
 
 const BodyWrapper = styled.div`
-  border: 1px solid red; /* RED*/
+  /*border: 1px solid red; /* RED*/
   width: 100%;
   min-height: 80vh;
   padding: 0px 50px;
@@ -16,7 +16,7 @@ const BodyWrapper = styled.div`
 `;
 
 const Book = styled.div`
-  border: 1px solid green; /* GREEN*/
+  /*border: 1px solid green; /* GREEN*/
   display: flex;
   width: 26vh;
   height: 36vh;

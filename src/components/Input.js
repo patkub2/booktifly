@@ -4,7 +4,7 @@ import zoom from "../img/zoom.svg";
 import { SearchContext } from "./searchContext";
 
 const InputWraper = styled.nav`
-  border: 1px solid red; /* RED*/
+  /*border: 1px solid red; /* RED*/
   display: flex;
   outline: none;
   justify-content: space-between;

@@ -25,75 +25,46 @@ const Book = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  .container {
-    position: relative;
-    height: 36vh;
-    width: 26vh;
-    border-radius: 20px;
-  }
+`;
 
-  .image {
-    display: block;
-    width: 100%;
-    max-height: 100%;
-    height: 100%;
+const Img = styled.img`
+  width: auto;
+  background-color: ${({ theme }) => theme.colors.white};
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 24vh;
+  height: 34vh;
+  align-items: center;
+  border-radius: 20px;
+  padding: 1vh;
+  z-index: 2;
+`;
 
-    border-radius: 20px;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: 0.5s ease;
-    background-color: #008cba;
-
-    border-radius: 20px;
-  }
-
-  .container:hover .overlay {
-    opacity: 1;
-  }
-
-  .text {
-    color: white;
-    font-size: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
+const Text = styled.div`
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  z-index: 3;
 `;
 const Header = () => {
   const { result } = useContext(SearchContext);
-  console.log(result.volumeInfo);
   // const { handleSearch, search } = useSearch();
   return (
     <BodyWrapper>
       {result.map((book) => (
         <Book>
-          <div class="container">
-            <img
+          <a target="_blank" href={book.volumeInfo.previewLink}>
+            <Img
               src={
                 book.volumeInfo.imageLinks.thumbnail
                   ? book.volumeInfo.imageLinks.thumbnail
                   : nobook
               }
-              alt="Avatar"
-              class="image"
-            />
-            <div class="overlay">
-              <div class="text">{book.volumeInfo.title}</div>
-            </div>
-          </div>
+              alt={book.title}
+            ></Img>
+          </a>
+          <Text>loaskdaosdkaos</Text>
         </Book>
       ))}
     </BodyWrapper>

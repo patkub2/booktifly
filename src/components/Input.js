@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import zoom from "../img/zoom.svg";
 import { SearchContext } from "./searchContext";
@@ -53,7 +53,7 @@ const Button = styled.button`
 `;
 
 const Input = () => {
-  const { search, handleSearch, handleSubmit } = useContext(SearchContext);
+  const { handleSearch, handleSubmit } = useContext(SearchContext);
   return (
     <form onSubmit={handleSubmit}>
       <InputWraper>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import booklogo from "../img/books-stack-of-three.png";
 
@@ -17,7 +17,7 @@ const LogoWraper = styled.nav`
 const Logo = () => {
   return (
     <LogoWraper>
-      <img src={booklogo}></img>Booktifly
+      <img src={booklogo} alt=""></img>Booktifly
     </LogoWraper>
   );
 };

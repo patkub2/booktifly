@@ -13,7 +13,6 @@ function SearchContextProvider(props) {
 
   function handleSearch(e) {
     setSearch(e.target.value);
-    console.log(search);
   }
 
   function handleSubmit(event) {
@@ -28,7 +27,7 @@ function SearchContextProvider(props) {
           "&maxResults=10"
       )
       .then((data) => {
-        console.log(data.data.items);
+        //console.log(data.data.items);
         setResult(data.data.items);
       });
   }

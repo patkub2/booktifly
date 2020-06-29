@@ -75,13 +75,17 @@ const Text = styled.div`
 
 const Header = () => {
   const { result } = useContext(SearchContext);
-  console.log(result.volumeInfo);
+  //console.log(result.volumeInfo);
   // const { handleSearch, search } = useSearch();
   return (
     <BodyWrapper>
       {result.map((book) => (
         <Book key={Math.random()}>
-          <a target="_blank" href={book.volumeInfo.previewLink}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href={book.volumeInfo.previewLink}
+          >
             <Cont>
               <Img
                 src={

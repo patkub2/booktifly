@@ -75,7 +75,7 @@ const Text = styled.div`
 
 const Header = () => {
   const { result } = useContext(SearchContext);
-  //console.log(result.volumeInfo);
+  console.log(result.volumeInfo);
   // const { handleSearch, search } = useSearch();
   return (
     <BodyWrapper>

@@ -5,7 +5,7 @@ const SearchContext = React.createContext();
 function SearchContextProvider(props) {
   const [search, setSearch] = useState();
   const [result, setResult] = useState([]);
-  const [apiKey] = useState("AIzaSyC7kSGBBwaEW_cAoCAtnEnlh3vPRgIWoaA");
+  const [apiKey] = useState("AIzaSyDj6kO6GZh6r47FtDx78bpoeR1pfTUGBAM");
 
   //function toggleTheme() {
   //     setTheme(prevTheme => prevTheme === "light" ? "dark" : "light")
